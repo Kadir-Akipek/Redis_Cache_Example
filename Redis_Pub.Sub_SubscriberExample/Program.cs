@@ -4,7 +4,7 @@ ConnectionMultiplexer connection = await ConnectionMultiplexer.ConnectAsync("loc
 
 ISubscriber subscriber = connection.GetSubscriber(); //subscriber oluşturduk
 
-await subscriber.SubscribeAsync("mychannel", (channel, message) =>
+await subscriber.SubscribeAsync("mychannel.*", (channel, message) =>
 {
 	Console.WriteLine(message);
 });
